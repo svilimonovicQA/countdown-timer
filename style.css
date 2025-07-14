@@ -1,0 +1,337 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Event Form Section */
+.event-form-section {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.event-form-section h2 {
+  color: #4a5568;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.event-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.start-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 10px;
+}
+
+.start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.start-btn:active {
+  transform: translateY(0);
+}
+
+/* Warning Messages */
+.warning-message {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-top: 15px;
+  border-left: 4px solid #e53e3e;
+  font-weight: 500;
+}
+
+.warning-message.hidden {
+  display: none;
+}
+
+/* Countdowns Section */
+.countdowns-section {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.countdowns-section h2 {
+  color: #4a5568;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.countdowns-container {
+  display: grid;
+  gap: 20px;
+}
+
+.no-events {
+  text-align: center;
+  color: #718096;
+  font-style: italic;
+  padding: 40px 20px;
+}
+
+/* Individual Countdown Card */
+.countdown-card {
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.countdown-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.event-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.event-date {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.delete-btn {
+  background: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #c53030;
+}
+
+/* Countdown Display */
+.countdown-display {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  text-align: center;
+}
+
+.time-unit {
+  background: white;
+  border-radius: 10px;
+  padding: 20px 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.time-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #667eea;
+  display: block;
+  line-height: 1;
+}
+
+.time-label {
+  font-size: 0.9rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 8px;
+}
+
+/* Event Completed State */
+.countdown-card.completed {
+  background: linear-gradient(135deg, #c6f6d5 0%, #9ae6b4 100%);
+  border-color: #68d391;
+}
+
+.countdown-card.completed .countdown-display {
+  opacity: 0.7;
+}
+
+.completed-message {
+  text-align: center;
+  color: #22543d;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .countdown-display {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .time-value {
+    font-size: 2rem;
+  }
+
+  .time-unit {
+    padding: 15px 8px;
+  }
+
+  .event-form-section,
+  .countdowns-section {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .countdown-display {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .time-value {
+    font-size: 1.8rem;
+  }
+
+  .countdown-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* Animation for countdown updates */
+.time-value {
+  transition: all 0.3s ease;
+}
+
+.time-value.updated {
+  transform: scale(1.1);
+  color: #764ba2;
+}
+
+/* Pulse animation for completed events */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.countdown-card.completed {
+  animation: pulse 2s infinite;
+}
